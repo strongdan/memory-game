@@ -60,7 +60,7 @@ grid.setAttribute('class', 'grid');
 game.appendChild(grid);
 
 // For each item in the cardsArray array...
-cardsArray.forEach(item => {
+gameGrid.forEach(item => {
   // Create a div
   const card = document.createElement('div');
 
@@ -76,3 +76,10 @@ cardsArray.forEach(item => {
   // Append the div to the grid section
   grid.appendChild(card);
 });
+
+// Duplicate array to create a match for each card
+let gameGrid = cardsArray.concat(cardsArray);
+
+// Randomize game grid on each load
+gameGrid.sort(() => 0.5 - Math.random());
+
